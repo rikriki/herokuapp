@@ -161,13 +161,16 @@ font-size: 26px;
 	height: auto;
     position: absolute;
     transform: translate(0px, -53px);
+    -webkit-transform: translate(0px, -53px);
     width: 110%;
 }
 
 .login .login-logo img {
     transform: translate(12%, 183%);
+    -webkit-transform: translate(12%, 183%);
     width: 80%;
 }
 .login .list.list-inset.padding {
     transform: translate(0px, 108%);
+    -webkit-transform: translate(0px, 108%);
 }
