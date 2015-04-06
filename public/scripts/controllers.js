@@ -27,6 +27,7 @@ angular.module('starter.controllers', [])
 
     $scope.cart = [];
     $scope.nextSlide = function() {
+      console.log("riki")
       $ionicSlideBoxDelegate.next();
     }
     $scope.toggleLeft = function() {
@@ -100,11 +101,9 @@ angular.module('starter.controllers', [])
   
 })
 
-.controller('loginCtrl', function($scope,Uniforms,$state,$ionicHistory,$ionicPopup,Login) {
+.controller('loginCtrl', function($scope,Uniforms,$state,$ionicPopup,Login) {
   $scope.data={};
-  $ionicHistory.nextViewOptions({
-    disableBack: true
-  });
+  
   $scope.login = function(){
      
      Login.loginUser($scope.data.username,$scope.data.epin)
