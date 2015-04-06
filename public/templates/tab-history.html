@@ -1,0 +1,25 @@
+<ion-view view-title="My Uniforms">
+  <ion-content>
+  <ion-list ng-if="transactions.length>0">
+       <ion-item class="item-remove-animate  item-icon-right row" ng-repeat="transaction in transactions" type="item-text-wrap" ng-click="toggleRight(uniform)">
+        <div class="col ">
+          <h4>Request Number</h4>
+          <h4 >{{transaction.requestNumber}}</h4>
+        </div>
+       <div class="col">
+          <h6 >date Requested: {{transaction.collections.date}} <br/> Items:{{transaction.items.length}}  {{transaction.status}} </h6>
+        </div>
+        <div class="col ">
+          <i class="icon ion-android-checkmark-circle icon-transaction completed" ng-if="transaction.status== 'completed'"></i>
+          <i class="icon ion-android-arrow-dropright-circle icon-transaction pending" ng-if="transaction.status=='pending'"></i>
+        </div>
+      </ion-item>
+    </ion-list>
+    <div ng-if="transactions.length==0"  class="no-content align-center">
+        <i class="icon ion-alert-circled"></i>
+        <h5 >No Transaction Available </h5>
+
+    </div>
+  </ion-content>
+</ion-view>
+

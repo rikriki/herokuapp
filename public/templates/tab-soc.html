@@ -1,0 +1,12 @@
+
+<ion-view view-title="Station of the Cross">
+  <ion-content scroll="true" on-scroll="animate()">
+    <ion-list>
+      <ion-item class="item-remove-animate item-icon-right" ng-repeat="station in stations" type="item-text-wrap" href="#/tab/soc/{{station.id}}">
+        <h2>{{station.list}}</h2>
+        <i class="icon ion-chevron-right icon-accessory"></i>
+      </ion-item>
+    </ion-list>
+
+  </ion-content>
+</ion-view>

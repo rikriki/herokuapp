@@ -1,0 +1,24 @@
+<link rel="stylesheet" type="text/css" href="styles/normalize.css" />
+<link rel="stylesheet" type="text/css" href="styles/component.css" />
+<ion-view view-title="{{station.title}}">
+
+  <ion-content scroll="true" on-scroll="animate()" on-swipe-right="onSwipeRight({{station.id}})" on-swipe-left="onSwipeLeft({{station.id}})">
+
+
+      <div id="container" class="container intro-effect-fadeout">
+      <!-- Top Navigation -->
+      <header class="header">
+        <div class="bg-img"><img src="{{station.image}}" alt="Background Image" /></div>
+        <div class="title">
+          <h1>{{station.title}}</h1>
+          <p class="subline">{{station.list}} : {{station.subHeading}}</p>
+          </div>
+      </header>
+      <button class="trigger" data-info="Click to see the header effect"><span>Trigger</span></button>
+      <article class="content">
+          <div ng-bind-html="loadHtml()"></div> </div>
+      </article>
+
+    </div><!-- /container -->
+  </ion-content>
+</ion-view>

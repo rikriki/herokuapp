@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
+    <title></title>
+
+    <!-- build:css styles/vendor.css -->
+    <!-- bower:css -->
+    <link rel="stylesheet" href="bower_components/ionic/release/css/ionic.css" />
+    <!-- endbower -->
+    <!-- endbuild -->
+    <link href="styles/style.css" rel="stylesheet">
+    <link href="styles/angular-pickadate.css" rel="stylesheet">
+
+    <!-- IF using Sass (run gulp sass first), then uncomment below and remove the CSS includes above
+    <link href="styles/ionic.app.css" rel="stylesheet">
+    -->
+
+    <!-- ionic/angularjs js -->
+    <!-- build:js scripts/vendor.js -->
+    <!-- bower:js -->
+    <script src="bower_components/angular/angular.js"></script>
+    <script src="bower_components/angular-animate/angular-animate.js"></script>
+    <script src="bower_components/angular-sanitize/angular-sanitize.js"></script>
+    <script src="bower_components/angular-ui-router/release/angular-ui-router.js"></script>
+    <script src="bower_components/ionic/release/js/ionic.js"></script>
+    <script src="bower_components/ionic/release/js/ionic-angular.js"></script>
+    <script src="bower_components/ngCordova/dist/ng-cordova.js"></script>
+    <!-- endbower -->
+    <!-- endbuild -->
+
+    <!-- cordova script (this will be a 404 during development) -->
+    <script src="cordova.js"></script>
+
+    <!-- your app's js -->
+    <!-- build:js scripts/scripts.js -->
+    <script src="scripts/classie.js"></script>
+    <script src="scripts/app.js"></script>
+    <script src="scripts/angular-pickadate.js"></script>
+
+    <!-- Controllers -->
+    <script src="scripts/controllers.js"></script>
+    <!-- EndControllers -->
+    <!-- Services -->
+    <script src="scripts/services.js"></script>
+    <script src="scripts/uniforms.js"></script>
+    <script src="scripts/transactions.js"></script>
+    <script src="scripts/login.js"></script>
+    
+    <!-- EndServices -->
+    <script src="scripts/configuration.js"></script>
+
+    <!-- endbuild -->
+  </head>
+  <body ng-app="starter" ng-controller="ContentController">
+    <!--
+      The nav bar that will be updated as we navigate between views.
+    -->
+
+    <!--
+      The views will be rendered in the <ion-nav-view> directive below
+      Templates are in the /templates folder (but you could also
+      have templates inline in this html file if you'd like).
+    -->
+    <ion-nav-view></ion-nav-view>
+    <ion-side-menus enable-menu-with-back-views="false">
+
+        <ion-side-menu-content>
+          <ion-nav-bar class="bar-dark">
+            <ion-nav-back-button>
+            </ion-nav-back-button>
+
+            <ion-nav-buttons side="left">
+              <button class="button button-icon button-clear ion-navicon" menu-toggle="left">
+              </button>
+            </ion-nav-buttons>
+
+            <ion-nav-buttons side="right">
+              <button class="button button-positive ionCart" ng-click="openModal()">
+                <i class="icon ion-android-cart"></i>
+                <span>{{cart.length}}</span>
+              </button>
+            </ion-nav-buttons>
+          </ion-nav-bar>
+
+          <ion-nav-view name="menuContent"></ion-nav-view>
+
+        </ion-side-menu-content> 
+
+        <!-- Left menu -->
+        <ion-side-menu side="left" class="padding-left">
+          <ion-header-bar class="bar-ion">
+          </ion-header-bar>
+          <ion-content class="ionSideMenu">
+            <div class="padding menuLeft">
+                <a class="item item-thumbnail-left padding ionProfilePic" href="#">
+                  <img src="images/profile_pic.jpg">
+                  <h2>s374654  </h2>
+                  <p>James Bond</p>
+                </a>
+            </div>
+            <ul class="list leftMenu">
+              <!-- Note each link has the 'menu-close' attribute so the menu auto closes when clicking on one of these links -->
+              <a href="#/tab/dash" class="item item-icon-left" menu-close><i class="icon ion-android-contacts"></i> Home</a>
+              <a href="#/tab/history" class="item item-icon-left" menu-close><i class="icon ion-android-contacts"></i> Transaction History</a>
+              <a href="#/tab/udc" class="item item-icon-left" menu-close><i class="icon ion-android-contacts"></i> UDC Collection Timings</a>
+              <a href="#/tab/account" class="item item-icon-left" menu-close><i class="icon ion-android-contacts"></i> Logout</a>
+            </ul>
+          </ion-content> 
+        </ion-side-menu>
+
+        <!-- Right menu -->
+        <ion-side-menu side="right" class="padding-right">
+          <ion-header-bar class="item item-icon-right  header-right-menu" >
+              <a class="icon ion-android-close" ng-click="toggleClose()"></a>
+          </ion-header-bar>
+          <ion-content scroll='false'>
+            <div class="list">
+              <div class="item item-icon-left item-right-header">
+                <i class="icon ion-android-calendar icon-rightMenu-header"></i>
+                {{uniform.itemName}}
+              </div>
+              <div class="padding">
+                <div class="item padding dates-right-menu">
+                  <h6>Date Issued: 20-Feb 2011 Valid until: 20-Feb 2011 </h6>
+                </div>
+              </div>  
+              <p class="padding">
+                Lorem ipsum dolor est generetum est salum<br/> Lorem ipsum dolor est generetum est salum 
+              </p>
+              <div class="list list-inset">
+                <div class="item item-icon-right item-right-menu">
+                  <div class="item item-input item-select">
+                     <div class="input-label">
+                         Choose
+                     </div>
+                     <select ng-model="dropdownSelect">
+                         <option>1</option>
+                         <option>2</option>
+                         <option>3</option>
+                     </select>
+                  </div>
+                  <a class="icon ion-android-cart" ng-click="addToCart(uniform.itemName,dropdownSelect)"></a>
+                </div>
+              </div>
+
+              
+            </div>
+          </ion-content>
+        </ion-side-menu>
+
+    </ion-side-menus>
+  </body>
+</html>

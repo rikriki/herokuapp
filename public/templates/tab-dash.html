@@ -1,0 +1,27 @@
+<ion-view view-title="My Uniforms">
+<ion-header-bar class="bar bar-subheader bar-dark subheader-uniform bar-icon-left ">
+   <h6> Grade 8 - Senior Flight Stewardess</h6>
+   <h4>Uniform Items for:</h4>
+   <i class="icon ion-ios-person-outline"></i>
+</ion-header-bar>
+
+  <ion-content>
+   	<ion-list>
+      <ion-item class="item-remove-animate item-icon-right item-uniform-list" ng-repeat="uniform in uniforms" type="item-text-wrap" ng-click="toggleRight(uniform)">
+        <h2 >{{uniform.itemName}}</h2>
+
+        <span class="item-note item-icon-left note-uniform-red" ng-if="uniform.red.length>0">
+          Due to replacement
+          <i class="icon ion-alert-circled"></i>
+        </span>
+
+        <span class="item-note item-icon-left note-uniform-amber" ng-if="uniform.amber.length>0">
+          Out of Stock
+          <i class="icon ion-android-cancel"></i>
+        </span>
+
+        <i class="icon ion-chevron-right icon-accessory"></i>
+      </ion-item>
+    </ion-list>
+  </ion-content>
+</ion-view>

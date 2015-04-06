@@ -1,0 +1,66 @@
+ <ion-modal-view>
+        <ion-header-bar class="bar-dark">
+          <button class="button button-assertive" ng-click="closeModal()">
+            Close
+          </button>
+          <h1 class="title">Review Order</h1>
+          <button class="button button-positive" ng-click="nextSlide()">
+            Next
+          </button>
+        </ion-header-bar>
+        <ion-content>
+
+            <ion-slide-box show-pager="false">
+              <ion-slide>
+                <div class="box blue">
+                    <ion-list class="item-uniform-list" ng-repeat="cart in cart" type="item-text-wrap">
+                      <div class="item item-input item-select modal-select">
+                        <div class="input-label">
+                            <h4>{{cart.name}}</h4>
+                        </div>
+                        <select ng-model="cart.quantity">
+                            <option>1</option>
+                            <option>2</option>
+                            <option>3</option>
+                        </select>
+                        <a class="icon ion-android-cart modal-button" ng-click="editCart(cart.itemName,cart.quantity)"></a>
+                      </div>
+                    </ion-list>
+                </div>
+              </ion-slide>
+              <ion-slide>
+                <div class="list list-inset">
+                  <label class="item item-input item-floating-label">
+                    <input type="text" 
+                    placeholder="Pick date" 
+                    ng-model="datepicker" 
+                    name="datepicker" 
+                    ng-click="opendateModal()" 
+                    readonly>
+                  </label>
+                  <label class="item item-input item-floating-label">
+                    <span class="input-label">Collection Point</span>
+                    <input type="text" placeholder="Collection Point">
+                  </label>
+                  <label class="item item-input item-floating-label">
+                    <span class="input-label">Contact Number</span>
+                    <input type="text" placeholder="Contact Number">
+                  </label>
+                  <label class="item item-input item-floating-label">
+                    <span class="input-label">Remarks</span>
+                    <input type="text" placeholder="Remarks ">
+                  </label>
+                  <button class="button button-block button-positive">
+                    submit
+                  </button>
+                </div>
+              </ion-slide>
+              
+            </ion-slide-box>
+
+        </ion-content>
+      </ion-modal-view>
+
+
+
+

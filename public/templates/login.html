@@ -1,0 +1,23 @@
+<ion-view hide-nav-bar ="true" >
+
+
+  <ion-content class="login" drag-content="false">
+    <img src="images/sample.png" />
+    <div class="login-logo">
+      <img src="images/uniformText.png" />
+    </div>
+    <div class="list list-inset padding">
+      
+      <label class="item item-input">
+        <input type="text" placeholder="Staff ID" ng-model="data.username">
+      </label>
+      <label class="item item-input">
+        <input type="text" placeholder="Epin" ng-model="data.epin">
+      </label>
+      <button class="button button-block button-positive" ng-click="login()">
+        Submit
+      </button>
+    </div>
+  
+  </ion-content>
+</ion-view>
