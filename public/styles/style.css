@@ -6,6 +6,10 @@
 .ionProfilePic{
 	background-color: #4c5564;
 }
+.menu-content .pane{
+	background-color: #eae6d6
+}
+
 .ionSideMenu,.bar-ion{
 	background:none repeat scroll 0 0 #353b47;border:none;
 }
